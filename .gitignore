@@ -3,17 +3,11 @@
 */.DS_Store
 __MACOSX/
 
-#/Data/*
 /checkpoints/*
-#/test*
 
 /Data/00m/*
 /Data/48m/*
 /cam_results/*
-
-# !/Data/csv_data/new_data_df
-# !test_data00m.csv
-# !test_data48m.csv
 
 
 # Byte-compiled / optimized / DLL files

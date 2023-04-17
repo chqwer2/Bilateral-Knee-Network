@@ -1,4 +1,5 @@
 import warnings
+from datasets import get_datasets
 from utils.utils import seed_everything
 from functions import *
 from options.parser import *
@@ -44,7 +45,6 @@ df_results = trainer.train(train_loader=train_dl,
                         )
 
 
-# df_results.to_csv("Data/csv_data/csv_results/bilateral_PHYSBOnet.csv", index=False)
 print("Test normal ...")
 trainer.test(test_loader=test_dls[0], 
                 score_funcs=score_funcs, 
