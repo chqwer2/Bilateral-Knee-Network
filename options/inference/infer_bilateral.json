@@ -1,0 +1,11 @@
+{
+    "model": {
+        "model_name": "BasicXrayNet", 
+        "backbone_name": "convnext_large_in22ft1k", 
+        "checkpoint": "checkpoints/bilateral_convnext_large/E14_EMA_00AUC0.736_48AUC0.697.pth"
+    }, 
+    "data": "Data/csv_data/new_data_df/test_data00m.csv", 
+    "results": "Data/csv_data/csv_results", 
+    "desc": "bilateral_convnext_large_test00m", 
+    "bilateral": true
+}

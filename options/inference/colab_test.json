@@ -1,0 +1,41 @@
+{
+  "name": ""
+  , "epoch" : 0
+  , "batch_size" : 2
+  , "separate_model" : false
+  , "lr" : 2e-4  // 1e-4
+  , "wd" : 0.01  // 0.01
+
+  , "IS_BILATERAL" : true
+  , "DESCE" : "bilateral_convnext_large"
+
+
+  , "model" : {
+    "model_name" : "BasicXrayNet"
+    , "backbone_name": "convnext_large_in22ft1k"
+
+    , "in_chans" : 1
+    , "drop_out" : 0.3             //  0.2 - > 0.714+0.750
+    , "backbone_drop_out" : 0.1    // 0.1->0.743, 0.15
+    , "embed_dim" : 48
+    , "classes" : 1
+    }
+  ,
+
+  "loss" : {
+    "grade" : 2,
+    "lmk" : 2
+
+  }
+
+  ,"datasets" :{
+    "train_path" : "Data/csv_data/new_data_df/dev_data00m.csv",
+    "test_path1" : "Data/csv_data/kaggle_data_df/test_data00m.csv",
+    "test_path2": "Data/csv_data/kaggle_data_df/test_data48m.csv"
+  }
+
+  ,"seed": 1234
+  ,"num_workers": 12
+
+}
+
