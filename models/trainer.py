@@ -60,22 +60,6 @@ def _run_epoch(opt, cls_models, data_loader,
                prefix="", 
                desc=None, netEMA=None
                ):
-    """
-    Train one epoch
-    
-    Args:
-    - model: the PyTorch model
-    - optimizer: the object that will update the weights of the network
-    - data_loader: DataLoader object that returns tuples of (input, label) pairs.
-    - loss_func: the loss function that takes in two arguments, the model outputs and the labels, and returns a score
-    - device: the compute lodation to perform training
-    - score_funcs: a dictionary of scoring functions to use to evalue the performance of the model
-    - is_bilateral: if True, train bilateral view model 
-    - prefix: a string to pre-fix to any scores placed into the _results_dictionary
-    - desc: a description to use for the prgress bar
-    
-    Return: loss of the current epoch
-    """
     # running_loss = 0.0
     running_loss = []
     y_true = []
@@ -408,29 +392,6 @@ def _train_binary_classifier(opt, cls_models, train_loader,
                              verbose=True,
                              is_bilateral=False,
                             ):
-    """"
-    Train a binary classifier
-
-    Args:
-    - model: the PyTorch model / "Module" to train
-    - loss_func: the loss function that takes in batch in two arguments,
-                    the model outputs and the labels, and returns a score
-    - train_loader: PyTorch DataLoader object that returns tuples of (input, label) pairs
-    - val_loader: Optional PyTorch DataLoader to evaluate on after every epoch
-    - score_funcs (dict): A dictionary of scoring functions to use to evalue the performance of the model
-    - epochs: the number of training epochs to perform
-    - device: the compute lodation to perform training
-    - checkpoints_dir (str): The checkpoints directory where you save the current training weight
-    - lr_schedule: the learning rate schedule used to alter \eta as the model trains.
-                    If this is not None than the user must also provide the optimizer to use.
-    - optimizer: the method used to alter the gradients for learning.
-    - patience: How long to wait after last time validation loss improved.
-                    Default: 3
-    - verbose: If True, prints a message for each validation loss improvement.
-                    Default: True
-
-    Return: DataFrame of results
-    """
     if score_funcs == None:
         score_funcs = {} # empty set
     results = collections.defaultdict(list)

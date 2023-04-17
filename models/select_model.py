@@ -1,7 +1,8 @@
 import sys
+import torch
 from torch.optim.lr_scheduler import ReduceLROnPlateau, CosineAnnealingLR
 
-from models.models import BasicXrayNet, SBOnet, SEnet, PHYSBOnet,  BilaterPHResnet50, MyModel2
+from models.models import BasicXrayNet, UnilateralKneeNet
 from models.loss import FocalLossV2,  myBCE,  Focal_Reg, LMK_Reg
 from models.optimizer import CustomWarmupStaticDecayLR
 from models.trainer import Trainer
