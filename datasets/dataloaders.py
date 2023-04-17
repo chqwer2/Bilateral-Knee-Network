@@ -5,6 +5,7 @@ import torch
 import cv2
 import torchvision
 import einops
+from PIL import Image
 from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 from sklearn.model_selection import StratifiedShuffleSplit, train_test_split
 
@@ -29,44 +30,6 @@ def read_img(img_path:str):
 
 # /home/ray/Sda1/rawdata/oai/cleanData/00m/9508335/xr/right/001.png
     
-class MyDataset(Dataset):
-    """
-    Class to store a given dataset.
-
-    Parameters:
-    - data: data.pt file. 
-                    Dircetory of tensors {"images": images, "labels": labels}
-    - transofrm: data transforms for auugmentation
-    """
-
-    def __init__(self, data, transform=None):
-        self.images = data["images"]
-        self.labels = data["labels"]
-        self.transform = transform
-
-    def __len__(self):
-        return len(self.labels)
-        
-    def __getitem__(self, idx):
-        # Bilateral side
-        images = self.images[idx] 
-        labels = self.labels[idx]
-        
-        images_left, images_right = torch.split(images, split_size_or_sections=1, 
-                                                dim=0)
-        
-        images_left, images_right = images_left.numpy(), images_right.numpy()
-        images_left, images_right = images_left.transpose((1, 2, 0)), images_right.transpose((1, 2, 0))
-        # images_left, images_right = np.expand_dims(images_left, axis=2), np.expand_dims(images_right, axis=2)
-        if self.transform:
-            images_left = self.transform(image=images_left)["image"]
-            images_right = self.transform(image=images_right)["image"]
-
-        return (images_left, images_right), labels
-
-
-from PIL import Image
-# TODO Here
 class NewDataset(Dataset):
     """
     Class to store a given dataset.

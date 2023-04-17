@@ -13,8 +13,9 @@ If you have any question, feel free to leave it in issues or email hao.chen.cs@g
 _______
 - **_News (2023-4-15)_**: We release the [**Demo**](https://www.kaggle.com/calvchen/bilateral-knee-network-demo) for [BikNet](https://github.com/chqwer2/chqwer2.github.io/blob/main/_papers/biknet/biknet_submission.pdf). 
 
+
 - **_News (2023-4-15)_**: We release the training codes of [BikNet](https://github.com/chqwer2/chqwer2.github.io/blob/main/_papers/biknet/biknet_submission.pdf) for radiographic osteoarthritis progression prediction.
-  
+
 
 ### Network architectures
 
