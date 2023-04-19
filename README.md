@@ -17,7 +17,9 @@ Run the training
 python main.py --opt options/training/Bilateral.json
 ```
 
-[Test Demo](https://www.kaggle.com/calvchen/bilateral-knee-network-demo) is also available in Kaggle. `<img src="figures/reader_test.jpg" alt="reader_test" style="zoom:80%;" />`
+[Test Demo](https://www.kaggle.com/calvchen/bilateral-knee-network-demo) is also available in Kaggle. 
+
+<img src="figures/reader_test.jpg" alt="reader_test" style="zoom:80%;" />
 
 ##### Results
 
